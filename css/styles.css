@@ -128,8 +128,8 @@ a {
 .who {
   margin: 0;
   text-align: center;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--faint);
 }
@@ -138,8 +138,8 @@ a {
   max-width: 38rem;
   margin: 0.7rem auto 0;
   text-align: center;
-  color: var(--faint);
-  font-size: 0.92rem;
+  color: var(--muted);
+  font-size: 1rem;
   line-height: 1.45;
 }
 
@@ -189,7 +189,7 @@ a {
 
 .role-line {
   max-width: 26rem;
-  margin: 0.7rem auto 0;
+  margin: 1rem auto 0;
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.45;
@@ -227,10 +227,10 @@ a {
   left: 0;
   bottom: 0.15rem;
   margin: 0;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--muted);
 }
 
 .tick {
@@ -299,9 +299,9 @@ a {
 
 .fine {
   margin-top: 0.35rem !important;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   letter-spacing: 0.04em;
-  color: var(--faint);
+  color: var(--muted);
   line-height: 1.45;
 }
 
@@ -366,10 +366,10 @@ a {
   margin-top: 1.4rem;
   padding-top: 0.9rem;
   border-top: 1px solid var(--line);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--muted);
 }
 
 .visually-hidden {
