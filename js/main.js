@@ -244,7 +244,7 @@ function mount(canvas, configure) {
 function start() {
   const star = document.getElementById("stage-star");
   const next = document.getElementById("stage-next");
-  if (!star || !next) return;
+  if (!star) return;
 
   mount(star, (root, scene, camera) => {
     addLights(scene, 0xfff1dc);
@@ -260,6 +260,8 @@ function start() {
       },
     };
   });
+
+  if (!next) return;
 
   mount(next, (root, scene, camera) => {
     addLights(scene, 0xf0e4d2);
