@@ -159,6 +159,32 @@ a {
 
 .role-second {
   margin-top: clamp(1.8rem, 5vh, 3.4rem);
+  font-style: italic;
+}
+
+.who,
+.schools,
+.roles {
+  animation: rise 0.85s ease both;
+}
+
+.schools {
+  animation-delay: 0.07s;
+}
+
+.roles {
+  animation-delay: 0.14s;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.55rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .role-line {
@@ -390,5 +416,13 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .who,
+  .schools,
+  .roles {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
