@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Michael Stephens</title>
   <meta name="description" content="Michael Stephens, class of 2029. Goalkeeper at IMG Academy. Intended major, aerospace engineering.">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="light">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23e0a15a' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23e0a15a'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,80 +13,68 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="sky" aria-hidden="true"></div>
-  <div class="limb" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
-
   <p class="spine">Personal log</p>
 
-  <main class="page">
-    <header class="identity">
-      <p class="kicker">
-        <span>Class of 2029</span>
-        <span>Malaysian · British</span>
-      </p>
-      <div class="name-block">
-        <h1>
-          <span class="name-line">Michael</span>
-          <span class="name-line name-line-last">Stephens</span>
-        </h1>
-        <p class="tagline">Goalkeeper, IMG Academy U16, Bradenton, Florida. MLS Next.</p>
-        <p class="aim">Intended major, aerospace engineering. Wants a strong university and a path toward astronaut work, particularly SpaceX.</p>
-        <p class="schools">The Alice Smith School, Kuala Lumpur. Grade 9 at the International School of Kuala Lumpur. Now grade 10 at IMG Academy.</p>
+  <header class="poster">
+    <p class="corner corner-class">Class of 2029</p>
+    <p class="corner corner-origin">Malaysian · British</p>
+    <div class="mark" aria-hidden="true"></div>
+    <h1>
+      <span class="name-line">Michael</span>
+      <span class="name-line name-line-last">Stephens</span>
+    </h1>
+    <p class="fact fact-ball">Goalkeeper, IMG Academy U16, Bradenton, Florida. MLS Next.</p>
+    <p class="fact fact-eng">Intended major, aerospace engineering. Wants a strong university and a path toward astronaut work, particularly SpaceX.</p>
+    <p class="corner corner-schools">The Alice Smith School, Kuala Lumpur. Grade 9 at the International School of Kuala Lumpur. Now grade 10 at IMG Academy.</p>
+  </header>
+
+  <section class="record" aria-labelledby="work-heading">
+    <h2 id="work-heading" class="visually-hidden">Projects</h2>
+
+    <article class="project">
+      <figure class="stage">
+        <span class="tick tick-tl" aria-hidden="true"></span>
+        <span class="tick tick-tr" aria-hidden="true"></span>
+        <span class="tick tick-bl" aria-hidden="true"></span>
+        <span class="tick tick-br" aria-hidden="true"></span>
+        <canvas id="stage-star" aria-hidden="true"></canvas>
+        <figcaption>Fig. 01</figcaption>
+      </figure>
+      <div class="project-copy">
+        <p class="project-index">01</p>
+        <h3>Star Trek Adventure</h3>
+        <p>AI gamemaster text adventure. TypeScript, LCARS bridge.</p>
+        <p class="links">
+          <a href="https://github.com/kammerjager7777/StarTrek-Adventure" target="_blank" rel="noopener noreferrer">Repository <span aria-hidden="true">↗</span></a>
+          <a href="https://sta-bridge-ledmkjy2mq-uc.a.run.app/access.html" target="_blank" rel="noopener noreferrer">Live app <span aria-hidden="true">↗</span></a>
+        </p>
+        <p class="fine">The live app opens behind a Google sign-in gate.</p>
       </div>
-      <p class="index-note">
-        <span>Work</span>
-        <span>01 filled · 02 open</span>
-      </p>
-    </header>
+    </article>
 
-    <section class="work" aria-labelledby="work-heading">
-      <h2 id="work-heading" class="visually-hidden">Projects</h2>
+    <article class="project project-empty">
+      <figure class="stage">
+        <span class="tick tick-tl" aria-hidden="true"></span>
+        <span class="tick tick-tr" aria-hidden="true"></span>
+        <span class="tick tick-bl" aria-hidden="true"></span>
+        <span class="tick tick-br" aria-hidden="true"></span>
+        <canvas id="stage-next" aria-hidden="true"></canvas>
+        <figcaption>Fig. 02</figcaption>
+      </figure>
+      <div class="project-copy">
+        <p class="project-index">02 <span>Placeholder</span></p>
+        <h3>Next project</h3>
+        <p>Open slot. Nothing built for this space yet.</p>
+        <p class="fine">No repository. No live app.</p>
+      </div>
+    </article>
+  </section>
 
-      <article class="project">
-        <figure class="stage">
-          <span class="tick tick-tl" aria-hidden="true"></span>
-          <span class="tick tick-tr" aria-hidden="true"></span>
-          <span class="tick tick-bl" aria-hidden="true"></span>
-          <span class="tick tick-br" aria-hidden="true"></span>
-          <canvas id="stage-star" aria-hidden="true"></canvas>
-          <figcaption>Fig. 01</figcaption>
-        </figure>
-        <div class="project-copy">
-          <p class="project-index">01</p>
-          <h3>Star Trek Adventure</h3>
-          <p>AI gamemaster text adventure. TypeScript, LCARS bridge.</p>
-          <p class="links">
-            <a href="https://github.com/kammerjager7777/StarTrek-Adventure" target="_blank" rel="noopener noreferrer">Repository <span aria-hidden="true">↗</span></a>
-            <a href="https://sta-bridge-ledmkjy2mq-uc.a.run.app/access.html" target="_blank" rel="noopener noreferrer">Live app <span aria-hidden="true">↗</span></a>
-          </p>
-          <p class="fine">The live app opens behind a Google sign-in gate.</p>
-        </div>
-      </article>
-
-      <article class="project project-empty">
-        <figure class="stage">
-          <span class="tick tick-tl" aria-hidden="true"></span>
-          <span class="tick tick-tr" aria-hidden="true"></span>
-          <span class="tick tick-bl" aria-hidden="true"></span>
-          <span class="tick tick-br" aria-hidden="true"></span>
-          <canvas id="stage-next" aria-hidden="true"></canvas>
-          <figcaption>Fig. 02</figcaption>
-        </figure>
-        <div class="project-copy">
-          <p class="project-index">02 <span>Placeholder</span></p>
-          <h3>Next project</h3>
-          <p>Open slot. Nothing built for this space yet.</p>
-          <p class="fine">No repository. No live app.</p>
-        </div>
-      </article>
-    </section>
-
-    <footer class="colophon">
-      <span>Michael Stephens</span>
-      <span>One page</span>
-    </footer>
-  </main>
+  <footer class="colophon">
+    <span>Michael Stephens</span>
+    <span>One page</span>
+  </footer>
 
   <script type="importmap">
   {
