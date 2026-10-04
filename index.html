@@ -18,20 +18,36 @@
   <div class="grain" aria-hidden="true"></div>
   <p class="spine">Personal log</p>
 
+  <div class="intro" aria-hidden="true">
+    <p class="intro-word">Footballer</p>
+  </div>
+
   <main class="page">
-    <header class="split">
-      <p class="who">Michael Stephens · Class of 2029 · Malaysian · British</p>
-      <p class="schools">The Alice Smith School, Kuala Lumpur. Grade 9 at the International School of Kuala Lumpur. Now grade 10 at IMG Academy.</p>
-      <div class="roles">
-        <h1 class="role">Footballer</h1>
-        <p class="role-line">Goalkeeper, IMG Academy U16, Bradenton, Florida. MLS Next.</p>
-        <h2 class="role role-second">Engineer</h2>
-        <p class="role-line">Intended major, aerospace engineering. Wants a strong university and a path toward astronaut work, particularly SpaceX.</p>
-      </div>
+    <header class="hero">
+      <h1>Michael Stephens</h1>
+      <p class="who">Class of 2029 · Malaysian · British</p>
     </header>
 
-    <section class="featured" aria-labelledby="feature-heading">
-      <h2 id="feature-heading" class="visually-hidden">Featured</h2>
+    <section class="chapter reveal" id="engineer" aria-labelledby="engineer-title">
+      <h2 id="engineer-title">Engineer</h2>
+      <p class="lead">Intended major, aerospace engineering. Wants a strong university and a path toward astronaut work, particularly SpaceX.</p>
+
+      <div class="schools">
+        <p>The Alice Smith School, June 2014–June 2025, Kuala Lumpur.</p>
+        <p>International School of Kuala Lumpur, grade 9, June 2025–June 2026.</p>
+        <div class="school">
+          <p>IMG Academy, grade 10, June 2026–present.</p>
+          <ul class="courses">
+            <li>AP Pre-Calculus</li>
+            <li>AP World History</li>
+            <li>Honors Chemistry</li>
+            <li>Honors Biology</li>
+            <li>Honors World Literature</li>
+            <li>Honors Spanish 2</li>
+          </ul>
+        </div>
+      </div>
+
       <article class="project">
         <figure class="stage">
           <span class="tick tick-tl" aria-hidden="true"></span>
@@ -44,7 +60,7 @@
         <div class="project-copy">
           <p class="project-index">01</p>
           <h3>Star Trek Adventure</h3>
-          <p>AI gamemaster text adventure. TypeScript, LCARS bridge.</p>
+          <p class="blurb">AI gamemaster text adventure. TypeScript, LCARS bridge.</p>
           <p class="links">
             <a href="https://github.com/kammerjager7777/StarTrek-Adventure" target="_blank" rel="noopener noreferrer">Repository <span aria-hidden="true">↗</span></a>
             <a href="https://sta-bridge-ledmkjy2mq-uc.a.run.app/access.html" target="_blank" rel="noopener noreferrer">Live app <span aria-hidden="true">↗</span></a>
@@ -52,20 +68,44 @@
           <p class="fine">The live app opens behind a Google sign-in gate.</p>
         </div>
       </article>
+
+      <ol class="quiet">
+        <li tabindex="0">
+          <span class="quiet-head"><span class="num">01</span><span class="quiet-name">Star Trek Adventure</span></span>
+          <span class="quiet-line">AI gamemaster text adventure. TypeScript, LCARS bridge.</span>
+        </li>
+        <li tabindex="0">
+          <span class="quiet-head"><span class="num">02</span><span class="quiet-name">Next project</span></span>
+          <span class="quiet-line">Open slot. Nothing built for this space yet.</span>
+        </li>
+      </ol>
     </section>
 
-    <ol class="quiet">
-      <li tabindex="0">
-        <span class="quiet-head"><span class="num">01</span><span class="quiet-name">Star Trek Adventure</span></span>
-        <span class="quiet-line">AI gamemaster text adventure. TypeScript, LCARS bridge.</span>
-      </li>
-      <li tabindex="0">
-        <span class="quiet-head"><span class="num">02</span><span class="quiet-name">Next project</span></span>
-        <span class="quiet-line">Open slot. Nothing built for this space yet.</span>
-      </li>
-    </ol>
+    <section class="chapter reveal" id="athletics" aria-labelledby="athletics-title">
+      <h2 id="athletics-title">Athletics</h2>
+      <p class="role-line">Goalkeeper</p>
+      <ul class="facts">
+        <li>Height 5'11"</li>
+        <li>Weight 165 lb</li>
+        <li>Dominant foot right</li>
+        <li>IMG Academy U16 HG, June 2026–present</li>
+        <li>MLS Next</li>
+        <li>Destiny FDC, January 2020–June 2026</li>
+        <li>Malaysia Youth League</li>
+      </ul>
+      <div class="film">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/WSspxIGDKes"
+          title="Michael Stephens | Highlights 2025-26"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="links">
+        <a class="video-link" href="https://www.youtube.com/watch?v=WSspxIGDKes">Michael Stephens | Highlights 2025-26</a>
+      </p>
+    </section>
 
-    <footer class="colophon">
+    <footer class="colophon reveal">
       <span>Michael Stephens</span>
       <span>One page</span>
     </footer>

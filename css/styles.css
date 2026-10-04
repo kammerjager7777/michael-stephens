@@ -1,3 +1,4 @@
+/* Palette and type stay with the existing log. */
 :root {
   --bg: #090a0c;
   --ink: #f3efe6;
@@ -9,7 +10,7 @@
   --serif: "Cormorant Garamond", "Palatino Linotype", Palatino, "Times New Roman", serif;
   --text: "Source Serif 4", "Iowan Old Style", Palatino, "Times New Roman", serif;
   --mono: "IBM Plex Mono", "Courier New", ui-monospace, monospace;
-  --pad: clamp(1.25rem, 4vw, 4rem);
+  --pad: clamp(1rem, 4vw, 4rem);
 }
 
 *,
@@ -20,6 +21,8 @@
 
 html {
   color-scheme: dark;
+  scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -97,25 +100,74 @@ a {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--muted);
 }
 
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  background: #090a0c;
+  transition: opacity 400ms ease;
+}
+
+.intro.is-gone {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-word {
+  margin: 0;
+  max-width: 100%;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(4.4rem, 16vw, 11rem);
+  line-height: 0.84;
+  letter-spacing: -0.045em;
+  text-align: center;
+}
 
 .page {
   position: relative;
   z-index: 1;
   max-width: 1040px;
   margin: 0 auto;
-  padding: clamp(1.6rem, 5vh, 3.2rem) var(--pad) 2.4rem;
+  padding: 0 var(--pad) 2.4rem;
   padding-left: max(var(--pad), 2.6rem);
+}
+
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(4.85rem, 18vw, 9.5rem);
+  line-height: 0.82;
+  letter-spacing: -0.046em;
+  text-wrap: balance;
 }
 
 .who,
 .num,
-.quiet-line,
 .stage figcaption,
 .fine,
 .colophon,
@@ -126,77 +178,63 @@ a {
 }
 
 .who {
-  margin: 0;
-  text-align: center;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
+  margin: 1.15rem 0 0;
+  max-width: 100%;
+  font-size: 0.75rem;
+  letter-spacing: 0.035em;
   text-transform: uppercase;
-  color: var(--faint);
-}
-
-.schools {
-  max-width: 38rem;
-  margin: 0.7rem auto 0;
-  text-align: center;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.45;
 }
 
-.roles {
-  margin-top: clamp(2.2rem, 7vh, 4.2rem);
-  text-align: center;
+.chapter {
+  padding-top: clamp(1.75rem, 5vh, 3rem);
 }
 
-.role {
+.chapter h2 {
   margin: 0;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(4.8rem, 18vw, 12.5rem);
-  line-height: 0.82;
-  letter-spacing: -0.04em;
+  font-size: clamp(3.15rem, 12vw, 6.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
 }
 
-.role-second {
-  margin-top: clamp(1.8rem, 5vh, 3.4rem);
-  font-style: italic;
+.lead,
+.schools p,
+.courses li,
+.facts li,
+.blurb,
+.quiet-line {
+  font-size: 1.0625rem;
+  line-height: 1.5;
 }
 
-.who,
-.schools,
-.roles {
-  animation: rise 0.85s ease both;
+.lead {
+  max-width: 40rem;
+  margin: 1.15rem 0 0;
 }
 
 .schools {
-  animation-delay: 0.07s;
+  margin-top: clamp(1.6rem, 4vh, 2.4rem);
 }
 
-.roles {
-  animation-delay: 0.14s;
+.schools > p,
+.school > p {
+  margin: 0;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
 }
 
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(0.55rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.courses {
+  list-style: none;
+  margin: 0;
+  padding: 0.15rem 0 0.85rem;
+  border-bottom: 1px solid var(--line);
 }
 
-.role-line {
-  max-width: 26rem;
-  margin: 1rem auto 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.45;
-}
-
-.featured {
-  margin-top: clamp(2.4rem, 7vh, 4.5rem);
+.courses li {
+  margin: 0;
+  padding: 0.12rem 0;
 }
 
 .project {
@@ -204,6 +242,7 @@ a {
   grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
   gap: clamp(1rem, 2vw, 1.75rem);
   align-items: center;
+  margin-top: clamp(1.6rem, 4vh, 2.6rem);
   padding: clamp(1.5rem, 3vh, 2.2rem) 0;
   border-top: 1px solid var(--line);
 }
@@ -257,12 +296,12 @@ a {
 
 .project-copy p {
   margin: 0;
-  max-width: 36ch;
+  max-width: 40ch;
 }
 
 .project-index {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--amber);
@@ -272,9 +311,9 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 1.35rem;
-  margin-top: 1.15rem !important;
+  margin: 0.85rem 0 0;
   font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -282,9 +321,24 @@ a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  max-width: 100%;
   text-decoration: none;
   border-bottom: 1px solid rgba(224, 161, 90, 0.75);
   padding-bottom: 0.05em;
+}
+
+.video-link {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 0.65rem 0;
+  line-height: 1.35;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 0.8rem;
+  white-space: normal;
 }
 
 .links a:hover {
@@ -306,7 +360,7 @@ a {
 }
 
 .quiet {
-  margin-top: 0.4rem;
+  margin: 0.4rem 0 0;
   list-style: none;
   padding: 0;
 }
@@ -328,7 +382,7 @@ a {
 
 .num {
   color: var(--amber);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   letter-spacing: 0.16em;
 }
 
@@ -347,16 +401,65 @@ a {
   opacity: 0;
   color: var(--muted);
   font-family: var(--text);
-  font-size: 0.98rem;
   letter-spacing: 0;
   text-transform: none;
 }
 
 .quiet li:hover .quiet-line,
 .quiet li:focus-within .quiet-line {
-  max-height: 3.4rem;
+  max-height: 4.5rem;
   margin-top: 0.4rem;
   opacity: 1;
+}
+
+.chapter + .chapter {
+  margin-top: clamp(1.4rem, 4vh, 2.6rem);
+  border-top: 1px solid var(--line);
+}
+
+.role-line {
+  margin: 0.9rem 0 0;
+  max-width: none;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.85rem, 4.5vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.facts {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.facts li {
+  margin: 0;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.facts li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.film {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1.35rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.film iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .colophon {
@@ -367,21 +470,27 @@ a {
   padding-top: 0.9rem;
   border-top: 1px solid var(--line);
   font-size: 0.75rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 480px) {
+  .who {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
 }
 
 @media (max-width: 700px) {
@@ -391,10 +500,6 @@ a {
 
   .page {
     padding-left: var(--pad);
-  }
-
-  .role {
-    font-size: clamp(3.6rem, 20vw, 6.2rem);
   }
 
   .project {
@@ -411,6 +516,10 @@ a {
     margin-top: 0.35rem;
     opacity: 1;
   }
+
+  .colophon {
+    letter-spacing: 0.08em;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -418,11 +527,13 @@ a {
     scroll-behavior: auto;
   }
 
-  .who,
-  .schools,
-  .roles {
-    animation: none;
+  .intro {
+    display: none !important;
+  }
+
+  .reveal {
     opacity: 1;
     transform: none;
+    transition: none;
   }
 }

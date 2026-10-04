@@ -277,4 +277,47 @@ function start() {
   });
 }
 
+function runIntro() {
+  const intro = document.querySelector(".intro");
+  if (!intro) return;
+  if (reducedMotion) {
+    intro.remove();
+    return;
+  }
+
+  const word = intro.querySelector(".intro-word");
+  window.setTimeout(() => {
+    if (word) word.textContent = "Engineer";
+  }, 1000);
+  window.setTimeout(() => {
+    intro.classList.add("is-gone");
+  }, 2000);
+  window.setTimeout(() => {
+    intro.remove();
+  }, 2450);
+}
+
+function runReveal() {
+  const nodes = Array.from(document.querySelectorAll(".reveal"));
+  if (!nodes.length) return;
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    nodes.forEach((node) => node.classList.add("is-in"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+  );
+  nodes.forEach((node) => observer.observe(node));
+}
+
 start();
+runIntro();
+runReveal();
